@@ -3,5 +3,5 @@
 用来存放一些Oveln写的小代码
 
 - HTML
-- ICPP
+- ICPC
   - 日期分类
