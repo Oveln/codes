@@ -1,97 +1,284 @@
-.top-bar {
-    width: 100%;
-    height: 50px;
-    margin: 0;
-    display: flex;
-}
-.box-top {
-    width: 100%;
-    min-width: 1350px;
-    background-color: rgba(255,255,255,0.5);
-    padding: 20px;
-    /*border-bottom-left-radius: 8px;*/
-    /*border-bottom-right-radius: 8px;*/
-}
-.box-top-right {
-}
-.top-ui {
-    width: 70%;
-    margin: auto;
-}
-.top-ui li{
-    width: 10%;
-    min-width: 60px;
-    padding: 5px;
-    float: left;
-    text-align: center;
-    display: block;
-}
-.top-ui a{
-    color: black;
-    text-decoration: none;
-    font-size: 10px;
-}
-.top-ui a:hover{
-    color: white;
-    size: 10px;
-}
-.top-ui img{
-    height: 40px;
+* {
     margin: 0;
     padding: 0;
-    display: inline;
-    position: relative;
-    top: -10px;
+    box-sizing: border-box;
+    font: 12px/20px 'Microsoft YaHei', 'å¾®è½¯é›…é»‘', SimSun, 'å®‹ä½“';
 }
-.top-search-wrap {
-    width: 70%;
-	margin: auto;
-    left: 0;
-    right: 0;
-    padding-left: 200px;
-    padding-right: 200px;
-    font-size:14px;
+
+.nav-bg {
+    width: 100%;
+    height: 46px;
+    background-color: #ff8500;
+}
+.nav-box {
+    position: absolute;
+    top: 2px;
+    width: 100%;
+    height: 44px;
+    background-color: #fcfcfc;
 }
 .nav {
-    width: 70%;
-	margin: auto;
-    left: 0;
-    right: 0;
+    width: 1000px;
+    margin: 0 auto;
 }
-.nav table {
-    font-size: 10px;
-    width: 20%;
-    border: 10px;
+.nav-L {
+    height: 44px;
     float: left;
 }
-.nav table tr td{
-    padding-top: 2px;
-    padding-bottom: 2px;
+.nav-R {
+    float: right;
+}
+.nav-tab {
+    width: 80px;
+    height: 44px;
+    text-align: center;
+    display: inline-block;
+}
+.nav-tab a {
+    height: 100%;
+    width: 100%;
+    line-height: 44px;
+    color:black;
+    display: inline-block;
+}
+.nav-tab a:visited,.nav-tab a:link,.nav-tab a:active,.nav-tab a:hover{
+    text-decoration: none;
+}
+.nav-tab:hover {
+    background-color: #edeef0;
+}
+.nav-tab:hover>a{
+    color: #ff8400;
+}
+.dropdown:hover .dropdown-content{
+    display: block;
+}
+.dropdown-content{
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    width: 100px;
+    z-index: 1;
+}
+.dropdown-content a:hover{
+    background-color: #fff5da;
+}
+.dropdown-content a{
+    height: 30px;
+    line-height: 30px;
+    border-bottom: #fecc5b solid 1px;
+}
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+.top-search-warp {
+    width: 100%;
+}
+.top-search-frame {
+    padding: 20px;
+    width: 1000px;
+    margin: 0 auto;
+}
+.sina-logo {
+    width: 105px;
+    height: 47px;
+    display: inline-block;
+    background-image: url("./sina-logo.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.top-search {
+    width: 400px;
+    height: 36px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 10px 0px 0px 20px;
+    border-radius: 5px;
+    border: #c1c1c1 solid 1px;
+}
+.top-search-option {
+    float: left;
+    width: 75px;
+    height: 100%;
+    border-right: #c1c1c1 solid 2px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 34px;
+    color: #959595;
+}
+.top-search-option .bi-arrow-down-short {
+    margin: auto 0;
+    height: 1em;
+    line-height: 34px;
+    float: right;
+    color: #ff8400;
+    font-size: 16px;
+}
+.top-search-button {
+    width: 75px;
+    height: 34px;
+    text-align: center;
+    float: right;
+    background-color: #ff8400;
+    border-radius: 4px;
+}
+.top-search-button .bi-search {
+    height: 1em;
+    line-height: 34px;
+    color: white;
+    font-size: 16px;
+}
+
+.top-search-input {
+    float: none;
+    height: 100%;
+    margin-left: 75px;
+    margin-right: 75px;
+}
+.top-search-input input {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
 }
 .main {
-    width: 70%;
-    padding-top: 60px;
-    padding-bottom: 20px;
-	margin: auto;
-    left: 0;
-    right: 0;
+    width: 100%;
 }
-.main div{
-    width: 50%;
+.main-nav {
+    width: 1000px;
+    margin: 0 auto;
+    padding: 0px 25px 0px 25px;
+}
+.main-nav-table {
+    width: 20%;
+    border-right: #f1e5c5 2px solid;
     float: left;
 }
-.kinds-nows-top {
-    min-width: 100%;
-    font-size: 17px;
+.main-nav-table:last-child {
+    border: none
 }
-.kinds-nows-img {
-    min-width: 100%;
+.main-nav-table table{
+    padding: 0;
+    height: 70px;
     width: 100%;
+    border: 0;
+    text-align: center;
+}
+.main-nav-table table tr td:first-child {
+   font-weight: bold;
+}
+.main-part {
+    width: 1000px;
+    margin: 10px auto;
+}
+.main-part-l {
+    float: left;
+    width: 240px;
+    padding-right: 10px;
+}
+.main-part-m {
+    float: left;
+    width: 360px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.main-part-r {
+    float: left;
+    width: 360px;
+    padding-right: 10px;
+}
+
+.sina-chanpin-bg {
+    position: relative;
+    width: 100%;
+    height: 245px;
+    background-color: #ff8400;
+    margin-top: 20px;
+    border: #d9e0ee solid 1px;
+}
+.sina-chanpin-nav {
+    width: 100%;
+    height: 36px;
+    position: absolute;
+    top: 4px;
+    background-color: #fff;
+    border-bottom: #959595 solid 1px;
+    line-height: 26px;
+    font-size: 16px;
+    padding: 5px;
+}
+.sina-chanpin-nav button {
+    float:right;
+    height: 25px;
+    width: 35px;
+    font-size: 23px;
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+.sina-chanpin-bg button:hover {
+    background-color: #999999;
+}
+.black-cat {
+    position: absolute;
+    background-image: url("./blink.gif");
+    width: 100px;
+    height: 210px;
+    left: -100px;
+}
+.sina-chanpin-nav-pages {
+    position: absolute;
+    background-color: #fff;
+    width: 100%;
+    top: 40px;
+    height: 203px;
+    line-height: 203px;
+    text-align: center;
+    font-size: 40px;
+}
+.main-part-nav {
+    width: 100%;
+    height: 35px;
+    background-color: #f8f8f8;
+    border: #dbdee1 solid 1px;
+    margin-bottom: 10px;
 
 }
-.kinds-nows-text {
-    min-width: 100%;
+.main-part-nav-item {
+    padding: 5px;
+    text-align: center;
+    line-height: 31px;
+    font-size: 16px;
+}
+
+.main-part-img-row {
     width: 100%;
-    text-align: left;
+    height: 90px;
+    padding-top: 10px;
+    text-align: center;
+}
+.main-part-img-row img {
+    max-width: 30%;
+    margin: 3px;
+}
+.main-part-text {
+    width: 100%;
+}
+.main-part-text ul {
+    list-style-position: inside;
+}
+.main-part-text ul li {
+    margin-top: 5px;
+}
+.main-part-text ul li a {
     font-size: 14px;
+    padding: 0px 1em 0px 0em;
+    text-decoration: none;
+}
+.main-part-text ul li a:hover {
+    padding: 0px 1em 0px 0em;
+    text-decoration: underline;
 }
