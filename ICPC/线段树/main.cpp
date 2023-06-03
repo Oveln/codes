@@ -35,5 +35,5 @@ struct Tree {
 };
 
 int main() {
-
+  
 }
