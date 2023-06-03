@@ -78,7 +78,8 @@ struct SegmentTree {
         int mid=(R+L)/2;
         if (MR<=mid) _modify(now*2,L,mid,ML,MR,x);
         else if (ML>mid) _modify(now*2+1,mid+1,R,ML,MR,x);
-        else _modify(now*2,L,R,ML,mid,x),_modify(now*2+1,mid+1,R,mid+1,MR,x);
+        else _modify(now*2,L,mid,ML,mid,x),_modify(now*2+1,mid+1,R,mid+1,MR,x);
+        a[now].w=a[now*2].w+a[now*2+1].w;
     }
     void _add(int now,int L,int R,int AL,int AR,int x) {
         if (L==AL&&R==AR) {
@@ -92,7 +93,8 @@ struct SegmentTree {
         int mid=(R+L)/2;
         if (AR<=mid) _add(now*2,L,mid,AL,AR,x);
         else if (AL>mid) _add(now*2+1,mid+1,R,AL,AR,x);
-        else _modify(now*2,L,R,AL,mid,x),_add(now*2+1,mid+1,R,mid+1,AR,x);
+        else _add(now*2,L,mid,AL,mid,x),_add(now*2+1,mid+1,R,mid+1,AR,x);
+        a[now].w=a[now*2].w+a[now*2+1].w;
     }
     LL query(int L,int R) {
         return _query(1,1,size,L,R);
@@ -145,6 +147,10 @@ int dfs(int now,int deep) {//层数 返回值为当前最深深度
     return maxdep;
 }
 int main() {
+    #ifndef ONLINE_JUDGE
+    freopen("data.in","r",stdin);
+    // freopen("data.out","w",stdout);
+    #endif
     scanf("%d",&n);
     for (int i=1;i<=n;i++) {
         scanf("%d",&a[i]);
@@ -159,17 +165,11 @@ int main() {
         c.push_back(SegmentTree());
         c[i].build(b[i]);
     }
-    // for (int i=0;i<=maxdep;i++) {
-    //     for (int j=0;j<b[i].size();j++) {
-    //         printf("%lld ",b[i][j]);
-    //     }
-    //     printf("\n");
-    //     printf("%lld\n",c[i].query(1,b[i].size()-1));
-    // }
     scanf("%d",&Q);
     while (Q--) {
         int code;
         scanf("%d",&code);
+        // printf("%d\n",code);
         switch (code) {
             case 1:{
                 int p,x;
@@ -180,6 +180,7 @@ int main() {
             case 2:{
                 int p,k,x;
                 scanf("%d%d%d",&p,&k,&x);
+                if (r[p].k.size()<k-1) break;//k层不存在(
                 auto f = r[p].k[k-1];
                 if (f.first>f.second) break;
                 c[dep[p]+k].modify(f.first,f.second,x);
@@ -188,6 +189,7 @@ int main() {
             case 3:{
                 int p,k,x;
                 scanf("%d%d%d",&p,&k,&x);
+                if (r[p].k.size()<k-1) break;//k层不存在(
                 auto f = r[p].k[k-1];
                 if (f.first>f.second) break;
                 c[dep[p]+k].add(f.first,f.second,x);
@@ -202,6 +204,10 @@ int main() {
             case 5:{
                 int p,k;
                 scanf("%d%d",&p,&k);
+                if (r[p].k.size()<k-1) {
+                    printf("0\n");
+                    break;
+                }
                 pair<int,int> f=r[p].k[k-1];
                 printf("%lld\n",c[dep[p]+k].query(f.first,f.second));
                 break;
