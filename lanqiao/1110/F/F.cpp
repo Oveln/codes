@@ -1,10 +1,10 @@
 #include<cstdio>
 
-int x,n;
+int w,n;
 int main() {
-	scanf("%d%d",&x,&n);
-	x-=1;
-	x = (x+n)%7;
-	printf("%d\n",x+1);
+	scanf("%d%d",&w,&n);
+	w-=1;
+	w = (w+n)%7;
+	printf("%d\n",w+1);
 	return 0;
 }
