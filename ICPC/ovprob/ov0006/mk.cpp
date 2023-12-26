@@ -1,4 +1,4 @@
-//生成长度在(200,1000)以内的由数字组成的字符串
+// 生成长度在(200,1000)以内的由数字组成的字符串
 #include <iostream>
 #include <random>
 #include <string>
